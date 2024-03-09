@@ -33,18 +33,22 @@ public class _US_201_YeniHali extends BaseDriver {
                 .click()
                 .sendKeys("test")
                 .sendKeys(Keys.TAB)
+                .click(lastName)
                 .sendKeys("Tester")
                 .sendKeys(Keys.TAB)
                 .click(maleRadioButton)
                 .sendKeys(Keys.TAB)
+                .click(email)
                 .sendKeys("test123@gmail.com")
                 .sendKeys(Keys.TAB)
+                .click(password)
                 .sendKeys("Test123")
                 .sendKeys(Keys.TAB)
                 .sendKeys("Test123")
                 .sendKeys(Keys.TAB)
                 .click(registerButton2)
                 .perform();
+        MyFunc.Bekle(7);
 
     } finally {
         driver.quit();
