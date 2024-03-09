@@ -1,0 +1,55 @@
+import Utlity.BaseDriver;
+import Utlity.MyFunc;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.annotations.Test;
+
+public class _US_201_YeniHali extends BaseDriver {
+
+    try {
+        driver.get("https://demowebshop.tricentis.com/");
+
+
+        WebElement registerButton = driver.findElement(By.linkText("Register"));
+        registerButton.click();
+
+
+        Actions actions = new Actions(driver);
+        WebElement firstName = driver.findElement(By.id("FirstName"));
+        WebElement lastName = driver.findElement(By.id("LastName"));
+        WebElement maleRadioButton = driver.findElement(By.id("gender-male"));
+        WebElement email = driver.findElement(By.id("Email"));
+        WebElement password = driver.findElement(By.id("Password"));
+        WebElement confirmPassword= driver.findElement(By.id("ConfirmPassword"));
+        WebElement registerButton2 = driver.findElement(By.id("register-button"));
+       MyFunc.Bekle(3);
+        actions.moveToElement(firstName)
+                .click()
+                .sendKeys("test")
+                .sendKeys(Keys.TAB)
+                .sendKeys("testing")
+                .sendKeys(Keys.TAB)
+                .click(maleRadioButton)
+                .sendKeys(Keys.TAB)
+                .sendKeys("test123456@gmail.com")
+                .sendKeys(Keys.TAB)
+                .sendKeys("Test123456")
+                .sendKeys(Keys.TAB)
+                .sendKeys("Test123456")
+                .sendKeys(Keys.TAB)
+                .click(registerButton2)
+                .perform();
+        // Verify successful registration
+        //    WebElement registrationSuccess = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='result' and contains(., 'Your registration completed')]")));
+        //     assert (registrationSuccess.isDisplayed());
+
+    } finally {
+        driver.quit();
+    }
+}
+}
+
+ }
