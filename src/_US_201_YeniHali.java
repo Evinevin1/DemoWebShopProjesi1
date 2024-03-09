@@ -4,12 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 
 public class _US_201_YeniHali extends BaseDriver {
 
+ @Test
+    public void _US_201_YeniHali(){
+
     try {
+
         driver.get("https://demowebshop.tricentis.com/");
 
 
@@ -25,7 +28,7 @@ public class _US_201_YeniHali extends BaseDriver {
         WebElement password = driver.findElement(By.id("Password"));
         WebElement confirmPassword= driver.findElement(By.id("ConfirmPassword"));
         WebElement registerButton2 = driver.findElement(By.id("register-button"));
-       MyFunc.Bekle(3);
+        MyFunc.Bekle(3);
         actions.moveToElement(firstName)
                 .click()
                 .sendKeys("test")
@@ -42,14 +45,53 @@ public class _US_201_YeniHali extends BaseDriver {
                 .sendKeys(Keys.TAB)
                 .click(registerButton2)
                 .perform();
-        // Verify successful registration
-        //    WebElement registrationSuccess = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='result' and contains(., 'Your registration completed')]")));
-        //     assert (registrationSuccess.isDisplayed());
 
     } finally {
         driver.quit();
     }
-}
+ }
+
 }
 
- }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
