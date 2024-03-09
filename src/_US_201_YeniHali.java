@@ -23,7 +23,7 @@ public class _US_201_YeniHali extends BaseDriver {
         Actions actions = new Actions(driver);
         WebElement firstName = driver.findElement(By.id("FirstName"));
         WebElement lastName = driver.findElement(By.id("LastName"));
-        WebElement maleRadioButton = driver.findElement(By.id("gender-male"));
+        WebElement maleRadioButton = driver.findElement(By.id("gender-female"));
         WebElement email = driver.findElement(By.id("Email"));
         WebElement password = driver.findElement(By.id("Password"));
         WebElement confirmPassword= driver.findElement(By.id("ConfirmPassword"));
